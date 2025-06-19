@@ -1,0 +1,22 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        // int j=1;
+        // for(int i=1;i<nums.length;i++){
+        //     if(nums[i]!=nums[i-1]){
+        //         nums[j]=nums[i];
+        //         j++;
+        //     }
+        // }
+        // return j;
+
+        int count=0;
+        HashSet<Integer> set=new HashSet<>();
+        for(int i:nums){
+            if(!set.contains(i)){
+                set.add(i);
+                nums[count++]=i;
+            }
+        }
+        return count;
+    }
+}

@@ -1,0 +1,24 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        // int num1=0;
+        // for(int i=0;i<nums.length;i++){
+        // num1=num1^nums[i];
+        // }
+        //     return num1;
+
+
+         HashMap <Integer,Integer> map=new HashMap<>();
+         for(int i:nums){
+            if(map.containsKey(i)){
+                map.put(i,map.get(i)+1);
+            }else{
+                map.put(i,1);
+            }
+         }   
+         for(int i:map.keySet()){
+            if(map.get(i)==1) return i;
+         } return -1;
+
+        
+    }
+}
